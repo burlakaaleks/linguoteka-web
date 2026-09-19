@@ -29,26 +29,6 @@ if (header) {
   window.addEventListener('scroll', updateHeader, { passive: true });
 }
 
-document.querySelectorAll('[data-store-link]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    const note = document.querySelector('[data-launch-note]');
-    if (!note) return;
-    note.textContent = 'Store links are coming soon — thanks for your interest!';
-    note.classList.add('is-visible');
-  });
-});
-
-const launchUpdateButton = document.querySelector('[data-launch-update]');
-const launchUpdateNote = document.querySelector('[data-launch-update-note]');
-
-if (launchUpdateButton && launchUpdateNote) {
-  launchUpdateButton.addEventListener('click', () => {
-    launchUpdateNote.textContent = 'Launch updates will be available here soon.';
-    launchUpdateNote.classList.add('is-visible');
-  });
-}
-
 const wordMeanings = {
   morning: ['mañana', 'morning · A1'],
   house: ['casa', 'house · A1'],
