@@ -22,28 +22,6 @@ if (menuToggle && menu) {
   });
 }
 
-const downloadTarget = document.querySelector('#download');
-document.querySelectorAll('[data-download-link]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    if (!downloadTarget) return;
-
-    event.preventDefault();
-
-    const root = document.documentElement;
-    const previousScrollBehavior = root.style.scrollBehavior;
-    root.style.scrollBehavior = 'auto';
-    downloadTarget.scrollIntoView({ block: 'start' });
-
-    if (window.location.hash !== '#download') {
-      window.history.pushState(null, '', '#download');
-    }
-
-    window.requestAnimationFrame(() => {
-      root.style.scrollBehavior = previousScrollBehavior;
-    });
-  });
-});
-
 const header = document.querySelector('[data-header]');
 if (header) {
   const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 18);
