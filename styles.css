@@ -33,6 +33,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 104px;
 }
 
 body {
@@ -331,6 +332,7 @@ p {
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
+  scroll-margin-top: 104px;
 }
 
 .store-badge {
